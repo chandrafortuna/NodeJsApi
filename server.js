@@ -1,3 +1,4 @@
+var cool = require('cool-ascii-faces');
 var restify = require('restify')
     , fs = require('fs')
     
@@ -13,7 +14,9 @@ require('./models/Product');
 require('./models/ProductCategory');
 require('./models/ProductDetail');
 
-
+server.get('/cool', function(request, response) {
+  response.send(cool());
+});
  
 if (process.env.environment == 'production')
     process.on('uncaughtException', function (err) {
