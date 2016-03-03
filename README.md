@@ -113,8 +113,19 @@ params:
     "erp_code": "002",
     "description": "Bags"
 } 
+
 ```
 DELETE /product_categories/:id
+
+
+## Test API using Mocha
+
+to run test script in folder /test, exec this command in new tab while app running
+
+```
+$ mocha
+
+```
 
 ## Authors
 

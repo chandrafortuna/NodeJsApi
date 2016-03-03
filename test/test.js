@@ -8,7 +8,7 @@ describe('Routing', function() {
   var url = 'http://localhost:3010';
   before(function(done) {
     // In our tests we use the test db
-    mongoose.connect('mongodb://localhost:27017/backoffice');                            
+    mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/backoffice');                            
     done();
   });
 
