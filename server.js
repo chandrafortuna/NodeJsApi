@@ -1,4 +1,4 @@
-var cool = require('cool-ascii-faces');
+// var cool = require('cool-ascii-faces');
 var restify = require('restify')
     , fs = require('fs')
     
@@ -9,14 +9,14 @@ server.use(restify.queryParser());
 server.use(restify.bodyParser());
     
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/backoffice');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/backoffice');
 require('./models/Product');
 require('./models/ProductCategory');
 require('./models/ProductDetail');
 
-server.get('/cool', function(request, response) {
-  response.send(cool());
-});
+// server.get('/cool', function(request, response) {
+//   response.send(cool());
+// });
  
 if (process.env.environment == 'production')
     process.on('uncaughtException', function (err) {
